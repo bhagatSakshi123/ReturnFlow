@@ -93,31 +93,28 @@ Order Placed
 
 ## Project Structure
 
-```
+```text
 ReturnFlow
 │
-├── returnflow-backend
-│   ├── src
-│   │   └── main
-│   │       └── java
-│   │           └── com.returnFlow
-│   │               ├── config
-│   │               ├── controller
-│   │               ├── entity
-│   │               ├── repository
-│   │               ├── security
-│   │               └── service
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.returnFlow
+│   │   │       ├── config
+│   │   │       ├── controller
+│   │   │       ├── dto
+│   │   │       ├── entity
+│   │   │       ├── repository
+│   │   │       ├── security
+│   │   │       └── service
+│   │   │
+│   │   └── resources
 │   │
-│   └── pom.xml
+│   └── test
 │
-├── returnflow-frontend
-│   ├── src
-│   │   ├── pages
-│   │   ├── services
-│   │   └── App.jsx
-│   │
-│   └── package.json
-│
+├── pom.xml
+├── mvnw
+├── mvnw.cmd
 └── README.md
 ```
 
