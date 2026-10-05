@@ -2,17 +2,13 @@
 
 ## Smart E-commerce Return, Inspection & Refund Management System
 
-ReturnFlow is a full-stack web application designed to manage the complete
-e-commerce product return lifecycle from return request to final refund.
+ReturnFlow is a Spring Boot REST API designed to manage the complete e-commerce product return lifecycle from return request to final refund.
 
 ## Features
 
 - User Registration and Login
 - JWT Authentication
 - Role-Based Authorization
-- Customer Dashboard
-- Seller / Warehouse Dashboard
-- Admin Dashboard
 - Product Management
 - Order Management
 - Order Delivery Management
@@ -42,6 +38,7 @@ Order Placed
 
 ### Customer
 
+- Register and login
 - Browse products
 - Place orders
 - Request product returns
@@ -69,8 +66,6 @@ Order Placed
 
 ## Technology Stack
 
-### Backend
-
 - Java 24
 - Spring Boot
 - Spring Security
@@ -82,14 +77,6 @@ Order Placed
 - Maven
 - Lombok
 - Swagger / OpenAPI
-
-### Frontend
-
-- React
-- Vite
-- Axios
-- React Router
-- CSS
 
 ## Project Structure
 
@@ -112,7 +99,6 @@ ReturnFlow
 │   │
 │   └── test
 │
-├── pom.xml
 ├── mvnw
 ├── mvnw.cmd
 └── README.md
@@ -122,14 +108,12 @@ ReturnFlow
 
 ReturnFlow uses JWT-based authentication.
 
-After successful login, the backend generates a JWT token.
-The frontend stores the token and sends it with protected API requests.
-```
+After successful login, the backend generates a JWT token. The token is used to authenticate protected REST API requests.
+
+```text
 Login
   ↓
 JWT Token
-  ↓
-Frontend
   ↓
 Authorization: Bearer <token>
   ↓
@@ -137,35 +121,17 @@ Spring Security
   ↓
 Role-Based Access
 ```
+
 ## API Documentation
 
-#### Swagger UI is available at:
-```
+Swagger UI is available at:
+
+```text
 http://localhost:8080/swagger-ui/index.html
 ```
-## Running the Backend
-1. Create the MySQL database.
-2. Configure database credentials in application.properties.
-3. Open the backend project in IntelliJ IDEA.
-4. Run the Spring Boot application.
-5. Backend will start on:
-```
-http://localhost:8080
-```
-## Running the Frontend
 
-Open the frontend folder in terminal:
-```
-npm install
-```
-Then:
-```
-npm run dev
-```
-Frontend will run on:
-```
-http://localhost:5173
-```
+Swagger provides interactive documentation for the available REST APIs.
+
 ## Main API Modules
 
 | Module | Endpoint |
@@ -189,6 +155,50 @@ The application uses:
 - Role-Based Authorization
 - Protected REST APIs
 - Spring Security Method-Level Authorization
+- Stateless Session Management
+
+## Running the Backend
+
+### 1. Create MySQL Database
+
+Create the required MySQL database for the application.
+
+### 2. Configure Application Properties
+
+Create/configure:
+
+```text
+src/main/resources/application.properties
+```
+
+Add your database and JWT configuration.
+
+> `application.properties` is excluded from GitHub using `.gitignore` because it contains environment-specific and sensitive configuration.
+
+### 3. Open the Project
+
+Open the ReturnFlow backend project in IntelliJ IDEA.
+
+### 4. Run the Application
+
+Run:
+
+```text
+ReturnFlowApplication.java
+```
+
+The backend will start on:
+
+```text
+http://localhost:8080
+```
+
+## Testing
+
+The REST APIs can be tested using:
+
+- Swagger UI
+- Postman
 
 ## Future Enhancements
 
